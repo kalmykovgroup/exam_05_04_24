@@ -1,7 +1,7 @@
 ﻿using exam_05_04_24.data;
 using exam_05_04_24.model;
-using Microsoft.EntityFrameworkCore;
-using MySqlConnector;
+using Microsoft.EntityFrameworkCore; 
+using System.Data;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -25,16 +25,16 @@ namespace exam_05_04_24
             InitializeComponent();
 
 
-
+      
             using (ApplicationDbContext db = new ApplicationDbContext())
             {
                 // создаем два объекта User
-                User tom = new User { Login = "Tom", Password = "123" }; 
+                User tom = new User("Tom", "123", "Иван", "Калмыков", "Алексеевич");
 
                 // добавляем их в бд
                 db.Users.Add(tom); 
                 db.SaveChanges();
-                Console.WriteLine("Объекты успешно сохранены");
+                 MessageBox.Show("Объекты успешно сохранены"); 
 
                 // получаем объекты из бд и выводим на консоль
                 var users = db.Users.ToList();
