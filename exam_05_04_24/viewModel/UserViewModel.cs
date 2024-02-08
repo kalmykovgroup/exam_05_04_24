@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace exam_05_04_24.view
+namespace exam_05_04_24.viewModel
 {
-    class Test
+    class UserViewModel
     {
     }
 }
