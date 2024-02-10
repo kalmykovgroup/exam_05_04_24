@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:exam_05_04_24.view"
         mc:Ignorable="d"
         Title="LoginWindow" Height="450" Width="800">
-    <Grid>
+    <StackPanel Margin="0 50 0 0">
+        <TextBox Width="200" Height="40"></TextBox>
+        <TextBox Width="200" Height="40"></TextBox>
+        <Button Width="100" Height="40">Send</Button>
         
-    </Grid>
+    </StackPanel>
 </Window>

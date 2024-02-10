@@ -19,32 +19,21 @@ namespace exam_05_04_24.data
     { 
 
         private static string connectionString = $"Server=localhost;port=3306;Database=academy;Uid=root;Pwd=;";
-
-        private DbConnection GetConnection()
-        {
-            DbConnection mySqlConnection = new MySqlConnection(connectionString);
-            try
-            { 
-                mySqlConnection.Open();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + "\n Ошибка при попытке установить соединение с интернетом," +
-                    " Приложение не может дальше продолжать работать!");
-                System.Windows.Application.Current.Shutdown();
-            }
-
-            return mySqlConnection;
-        }
-
+ 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL(GetConnection(), null); 
+            optionsBuilder.UseMySQL(connectionString); 
         }
+         
 
+        public DbSet<Group> Groups { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<HomeWork> HomeWorks { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }  //Рассписание занятий
+        public DbSet<Subject> Subjects { get; set; }  //Предметы (C#, C++, PHP ...)
+ 
+
 
         public ApplicationDbContext()
         {

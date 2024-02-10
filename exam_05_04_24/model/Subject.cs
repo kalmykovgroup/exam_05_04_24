@@ -9,12 +9,8 @@ namespace exam_05_04_24.model
     internal class Subject //Предметы (C#, C++, PHP ...)
     {
         public int Id { get; set; }
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
-        public Subject(int id, string name)
-        {
-            Id = id;
-            Name = name; 
-        }
+        List<User> Users { get; set; } = []; 
     }
 }

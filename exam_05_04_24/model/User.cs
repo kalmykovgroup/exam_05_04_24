@@ -13,30 +13,30 @@ namespace exam_05_04_24.model
     {
         public int Id { get; set; }
 
-        public string Login { get; set; }
+        public string Login { get; set; } = null!;
+        public string Password { get; set; } = null!;
 
-        public string Password { get; set; }
-         
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public string Patronymic { get; set; }
+        public string Name { get; set; } = null!;
+        public string LastName { get; set; } = null!;
+        public string Patronymic { get; set; } = null!;
+        public int Phone { get; set; }
+
         public string? HomeAddress { get; set; } 
         public string? Email { get; set; }
-        public int? Phone { get; set; }
+     
         public DateTime? DateTimeDateOfBirth { get; set; }
+         
+         
+        List<Group> Groups { get; } = [];
 
-        public int? Group_Id { get; set; } 
+        List<Subject> Subjects { get; } = []; 
+
+        Schedule? Schedule { get; set; }
+        HomeWork? HomeWork { get; set; }
 
         [NotMapped]
         public Role Role { get; set; } //Роль в которой авторизовался пользователь (как студент или админ...)
 
-        public User(string login, string password, string name, string lastName, string patronymic)
-        {
-            Login = login;
-            Password = password;
-            Name = name;
-            LastName = lastName;
-            Patronymic = patronymic;
-        }
+      
     }
 }

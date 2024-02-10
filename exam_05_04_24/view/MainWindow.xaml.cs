@@ -23,27 +23,8 @@ namespace exam_05_04_24
         public MainWindow()
         {
             InitializeComponent();
-
-
-      
-            using (ApplicationDbContext db = new ApplicationDbContext())
-            {
-                // создаем два объекта User
-                User tom = new User("Tom", "123", "Иван", "Калмыков", "Алексеевич");
-
-                // добавляем их в бд
-                db.Users.Add(tom); 
-                db.SaveChanges();
-                 MessageBox.Show("Объекты успешно сохранены"); 
-
-                // получаем объекты из бд и выводим на консоль
-                var users = db.Users.ToList();
-               
-            }
-
-
-
-
+  
+           
         }
     }
 }
